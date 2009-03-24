@@ -1,0 +1,5 @@
+name = Clean
+description = A clean theme
+core = 6.x
+engine = phptemplate
+

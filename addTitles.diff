@@ -1,0 +1,20 @@
+diff -U 3 -H -d -r -N -- clear/block.tpl.php clearTitles/block.tpl.php
+--- clear/block.tpl.php	2009-03-22 06:56:50.000000000 +0100
++++ clearTitles/block.tpl.php	2009-03-22 06:46:58.000000000 +0100
+@@ -1,6 +1,15 @@
+ <?php // $Id: block.tpl.php,v 1.1.2.1 2008/09/05 15:30:24 njt1982 Exp $ ?>
+ <div id="block-<?php print $block->module .'-'. $block->delta; ?>" class="block block-<?php print $block->module ?>">
+-  <div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>
++  <?php if ($block->subject):?>
++  <div class="title">
++    <div class="titleLeft">&nbsp;</div>
++    <div class="titleRight">&nbsp;</div>
++    <div class="titleMiddle">
++      <?php print '<h3>'. $block->subject .'</h3>'; ?>
++    </div>
++  </div><?php else :?>
++  <div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>  
++  <?php endif;?>
+   <div class="content">
+     <?php print $block->content ?>
+   </div>
